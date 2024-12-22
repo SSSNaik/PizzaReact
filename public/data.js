@@ -1,7 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
-
 const pizzaData = [
   {
     name: "Focaccia",
@@ -46,56 +42,3 @@ const pizzaData = [
     soldOut: false,
   },
 ];
-
-function App() {
-  return (<div>
-    <Header/>
-    <Menu/>
-    <Footer/>
-    </div>);
-}
-
-function Header()
-{
-  return <h1>Fast Pizza Co.</h1>
-}
-
-function Menu()
-{
-  return(
-    <div>
-    <h3>Our Menu</h3>
-    <Pizza/>
-    <Pizza/>
-    <Pizza/>
-    </div>
-    
-  );
-}
-
-
-
-function Pizza(){
- return(<div>
-  <img src="pizzas/spinaci.jpg"/>
-  <h1>pizza</h1>
-  <p>Tomato, mozarella, spinach, and ricotta cheese</p>
- </div>);
-   
-}
-
-function Footer()
-{
-  //return React.createElement("footer",null,"We're Currently Open");
-
-  //logic
-  const cHour =new Date().getHours();
-  const openHour = 24;
-  const closeHour = 12;
-  const isOpen = cHour >= openHour && cHour<= closeHour
-
-  console.log(isOpen);
-
-  return(<footer>{new Date().toLocaleTimeString()}. We're Currently Open </footer>);
-}
-export default App;
